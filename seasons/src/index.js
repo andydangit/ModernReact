@@ -4,14 +4,7 @@ import ReactDom from "react-dom";
 
 class App extends React.Component {
     // initialize state 
-    constructor(props) { 
-        super(props); 
-
-        // This is the only time we do direct assignment  to this.state
-        this.state = { lat: null, errorMessage: '' };
-
-
-    }
+    state = { lat: null, errorMessage: ''};
 
     // example Lifecycle 
     componentDidMount() {
