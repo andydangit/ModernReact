@@ -20,28 +20,26 @@ class App extends React.Component {
         console.log("My component was just updated -it rerendered!");
     }
 
+    renderContent() { 
+        if (this.state.errorMessage && !this.state.lat) {
+            return <div> Error: {this.state.errorMessage} </div>;
+        }
+        
+        if (!this.state.errorMessage && this.state.lat){
+            return <SeasonDisplay lat = {this.state.lat} /> 
+        }
+     
+         return <Spinner message = "Please accept location request"/>; 
+     
+    }
 
-    // React says we have to define render!!
+// Centralize in 1 location 
   render() {
-   if (this.state.errorMessage && !this.state.lat) {
-       return <div> Error: {this.state.errorMessage} </div>;
-   }
-   
-   if (!this.state.errorMessage && this.state.lat){
-       return <SeasonDisplay lat = {this.state.lat} /> 
-   }
-
-    return <Spinner message = "Please accept location request"/>; 
-
-
-    // return (
-    // <div>
-    //     Latitude: {this.state.lat} 
-    //      <br />
-    //     Error: {this.state.errorMessage}
-    //     </div>
-    // );
-
+    return(
+       <div className="border red"> 
+            {this.renderContent()}
+       </div>
+    );
   }
 }
 
