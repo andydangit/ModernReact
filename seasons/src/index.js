@@ -20,6 +20,7 @@ class App extends React.Component {
         console.log("My component was just updated -it rerendered!");
     }
 
+    // create another function to Avoid conditional in render
     renderContent() { 
         if (this.state.errorMessage && !this.state.lat) {
             return <div> Error: {this.state.errorMessage} </div>;
