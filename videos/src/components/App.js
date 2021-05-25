@@ -1,9 +1,10 @@
 import React from "react";
 import SearchBar from "./SearchBar";
+import yotube from "../apis/Youtube" 
 
 class App extends React.Component {
-  onTermSubmit = (term) => { 
-    console.log(term);
+  onTermSubmit = term => { 
+    
   }
 
   render() {
