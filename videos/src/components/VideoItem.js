@@ -2,9 +2,15 @@ import React from "react";
 
 const VideoItem = ({ video }) => {
   return (
-    <dvi>
-      <img src={video.snippet.thumbnails.medium.url}/>
-      {video.snippet.title}
+    <dvi className="item">
+      <img
+        className="ui image"
+        src={video.snippet.thumbnails.medium.url}
+        alt="smallImage"
+      />
+      <div className="content">
+        <div className="header"> {video.snippet.title}</div>
+      </div>
     </dvi>
   );
 };
