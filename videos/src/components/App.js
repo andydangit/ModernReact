@@ -7,6 +7,11 @@ import VideoDetail from "./VideoDetail";
 class App extends React.Component {
   state = { videos: [], selectedVideo: null };
 
+  // Default Search term on search bar 
+  componentDidMount() {
+    this.onTermSubmit('What is Full Stack') 
+  }
+
   onTermSubmit = async (term) => {
     const response = await youtube.get("/search", {
       params: {
