@@ -7,12 +7,12 @@ const Search = () => {
 
 
   useEffect(() => {
-    // different way of using async 
-    const search =  async() => { 
+    // different way of using async in useEffect 2nd way 
+   ( async() => { 
       await axios.get('');
-    };
+    })();
 
-    search();
+
   }, [term]);
 
   return (
