@@ -8,10 +8,16 @@ const Search = () => {
 
   useEffect(() => {
     // different way of using async in useEffect 2nd way 
-   ( async() => { 
-      await axios.get('');
-    })();
+  //  ( async() => { 
+  //     await axios.get('');
+  //   })();
 
+
+  // 3rd way to use Async in Use Effect
+    axios.get('asdf')
+    .then ((response ) => {
+      console.log(response.data);
+    });
 
   }, [term]);
 
