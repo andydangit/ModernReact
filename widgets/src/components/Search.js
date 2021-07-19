@@ -7,6 +7,12 @@ const Search = () => {
 
 
   useEffect(() => {
+
+    // recommend way to use async in useEffect 
+    const search = async () => { 
+      await axios.get('ast');
+    };
+
     // different way of using async in useEffect 2nd way 
   //  ( async() => { 
   //     await axios.get('');
@@ -14,11 +20,12 @@ const Search = () => {
 
 
   // 3rd way to use Async in Use Effect
-    axios.get('asdf')
-    .then ((response ) => {
-      console.log(response.data);
-    });
+    // axios.get('asdf')
+    // .then ((response ) => {
+    //   console.log(response.data);
+    // });
 
+    search();
   }, [term]);
 
   return (
