@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 
 const Search = () => {
   const [term, setTerm] = useState("");
 
-  console.log('I RUN WITH EVERY RENDER');
+
 
   useEffect(() => {
-    console.log('I RUN AFTER EVERY RENDER AND AT INITIAL RENDER');
+    // different way of using async 
+    const search =  async() => { 
+      await axios.get('');
+    };
+
+    search();
   }, [term]);
 
   return (
