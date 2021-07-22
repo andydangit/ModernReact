@@ -4,35 +4,34 @@ import Search from "./components/Search";
 import Dropdown from "./components/Dropdown";
 
 const items = [
-    {
-        title: 'What is React?',
-        content: 'React is a front end javascript framework'
-    },
-    {
-        title: 'why use React?',
-        content: ' React is a favorite JS library among engineers'
-    },
-    {
-        title: 'How do you use React?',
-        content:'You use React by creating components'
-    }
-]
-
-const options = [
   {
-    label: 'The Color Red',
-    value: 'red'
+    title: "What is React?",
+    content: "React is a front end javascript framework",
   },
   {
-    label: 'The Color Green',
-    value: 'green'
+    title: "why use React?",
+    content: " React is a favorite JS library among engineers",
   },
   {
-    label: 'A Shade of Blue',
-    value: 'blue'
+    title: "How do you use React?",
+    content: "You use React by creating components",
   },
 ];
 
+const options = [
+  {
+    label: "The Color Red",
+    value: "red",
+  },
+  {
+    label: "The Color Green",
+    value: "green",
+  },
+  {
+    label: "A Shade of Blue",
+    value: "blue",
+  },
+];
 
 export default () => {
   return (
