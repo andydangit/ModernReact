@@ -3,10 +3,14 @@ import React, { useState, useEffect } from "react";
 const Dropdown = ({ options, selected, onSelectedChange }) => {
   const [open, setOpen] = useState(false);
 
+
+  // this use the click event to lose the drop down 
 useEffect (() => {
   document.body.addEventListener('click', () => {
-    console.log('CLICK');;
-  });
+    setOpen(false);
+  },
+  { capture: true }
+  );
 }, []);
 
   const renderedOptions = options.map((option) => {
