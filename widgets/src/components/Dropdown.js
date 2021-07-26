@@ -6,8 +6,8 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
 
   // this use the click event to lose the drop down 
 useEffect (() => {
-  document.body.addEventListener('click', () => {
-    console.log("Body CLICK");
+  document.body.addEventListener('click', (event) => {
+    console.log(event.target);
     setOpen(false);
   },
   { capture: true }
@@ -23,10 +23,7 @@ useEffect (() => {
       <div
         key={option.value}
         className="item"
-        onClick={() => {
-          console.log("ITEM CLICKED");
-         onSelectedChange(option)
-        }}
+        onClick={() => onSelectedChange(option)}
       >
         {option.label}
       </div>
@@ -38,10 +35,7 @@ useEffect (() => {
       <div className="field">
         <label className="label">Select a Color</label>
         <div
-          onClick={() => {
-            console.log("DROPDOWN CLICKED");
-            setOpen(!open)
-          }}
+          onClick={() => setOpen(!open)}
           className={`ui selection dropdown ${ open ? 'visible active': ''}`}
         >
           <i className="dropdown icon"></i>
